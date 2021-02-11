@@ -1,0 +1,72 @@
+<html>
+    <style>
+        body {
+            background-color:white
+        }
+    </style>
+
+    <title>
+        Hello
+    </title>
+    <body id="angry">
+        <h1 style="text-align:center">
+            Mon Santa Cruz
+        </h1>
+        <p style="text-align:center">
+            <img src="carl.png" onclick="playsounds('cwoisant.mp3')"/>
+            Hi Jimmys Mom
+            <img src="john.png" onclick="playsounds('bmain.mp3')"/>
+        </p>
+        <h1 style="color:white" onclick="playsounds('gimme.mp3')">
+            WALBERT
+        </h1>
+        <br>
+        <p style="text-align:center">
+            Hello and welcome to my portfolio full of my skol projects
+            <br>
+            click below to see
+            <button onclick="angrifybutton('black')">
+                angrify
+            </button>
+            <button onclick="angrifybutton('white')">
+                yangrify
+            </button>
+            <img src="granny.jpg" onclick="grannyclick()" id="gran"/>
+            click the lola
+        </p>
+        
+        
+    </body>
+    <script>
+        var pics = ["granny.jpg", "fdas.jpg"]
+        var picsNig = ["granny2.jpg", "fdas2.jpg"]
+        var count = 1;
+        var darkmode = false;
+
+        function angrifybutton(color) {
+            if(color == "black") {
+                darkmode = true
+            } else {
+                darkmode = false
+            }
+            document.getElementById("angry").style.backgroundColor = color;
+            count -= 1
+            grannyclick()
+        }
+
+        function grannyclick() {
+            if(darkmode == false) {
+                document.getElementById("gran").src = pics[count%2];
+            } else {
+                document.getElementById("gran").src = picsNig[count%2];
+            }
+            
+            count++
+        }
+
+        function playsounds(sound) {
+            var audio = new Audio(sound);
+            audio.play();
+        }
+    </script>
+</html>
